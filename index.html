@@ -1,0 +1,499 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#081018" />
+  <meta name="description" content="Vox — голосовой ИИ-ассистент для врачей. Врач говорит с пациентом, Vox помогает заполнять медицинскую карту и сокращать рутинные действия в медицинской системе." />
+  <title>Vox — врач говорит, карта заполняется</title>
+  <link rel="icon" href="assets/vox-logo.png" type="image/png" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <a class="skip-link" href="#main">Перейти к содержимому</a>
+
+  <header class="site-header" id="top">
+    <div class="container header-inner">
+      <a class="brand" href="#top" aria-label="Vox — на главную">
+        <img src="assets/vox-logo.png" alt="" width="58" height="38" />
+        <span class="brand-copy">
+          <strong>VOX</strong>
+          <small>by SUERTE</small>
+        </span>
+      </a>
+
+      <nav class="desktop-nav" aria-label="Основная навигация">
+        <a href="#how">Как работает</a>
+        <a href="#use-cases">Для клиник</a>
+        <a href="#security">Безопасность</a>
+        <a href="#pricing">Тарифы</a>
+        <a href="#faq">FAQ</a>
+      </nav>
+
+      <div class="header-actions">
+        <button class="btn btn-small btn-primary js-open-lead" type="button">Запросить пилот</button>
+        <button class="menu-button" type="button" aria-label="Открыть меню" aria-expanded="false" aria-controls="mobile-nav">
+          <span></span><span></span>
+        </button>
+      </div>
+    </div>
+
+    <nav class="mobile-nav" id="mobile-nav" aria-label="Мобильная навигация" hidden>
+      <a href="#how">Как работает</a>
+      <a href="#use-cases">Для клиник</a>
+      <a href="#security">Безопасность</a>
+      <a href="#pricing">Тарифы</a>
+      <a href="#faq">FAQ</a>
+      <button class="btn btn-primary js-open-lead" type="button">Запросить пилот</button>
+    </nav>
+  </header>
+
+  <main id="main">
+    <section class="hero section-dark">
+      <div class="hero-glow hero-glow-one"></div>
+      <div class="hero-glow hero-glow-two"></div>
+      <div class="container hero-grid">
+        <div class="hero-copy reveal">
+          <div class="eyebrow"><span class="eyebrow-dot"></span>Голосовой ИИ-ассистент для врачей</div>
+          <h1>Врач говорит.<br><span>Vox заполняет карту.</span></h1>
+          <p class="hero-lead">Vox помогает врачу работать с медицинской системой голосом во время приёма — без постоянного переключения между пациентом, клавиатурой и интерфейсом.</p>
+
+          <div class="hero-cta-row">
+            <button class="btn btn-primary btn-large js-open-lead" type="button">Запросить пилот <span aria-hidden="true">↗</span></button>
+            <a class="btn btn-ghost btn-large" href="#demo">Посмотреть демо <span aria-hidden="true">↓</span></a>
+          </div>
+
+          <div class="hero-proof" aria-label="Ключевые свойства Vox">
+            <div><strong>Голосом</strong><span>без нового сложного интерфейса</span></div>
+            <div><strong>В фоне</strong><span>пока врач ведёт приём</span></div>
+            <div><strong>Под контролем</strong><span>врач проверяет итоговую запись</span></div>
+          </div>
+        </div>
+
+        <div class="hero-product reveal delay-1" aria-label="Демонстрация интерфейса Vox">
+          <div class="product-window">
+            <div class="window-bar">
+              <div class="window-dots" aria-hidden="true"><i></i><i></i><i></i></div>
+              <div class="window-address">medical-system.kz / visit</div>
+              <div class="window-secure">● защищённое соединение</div>
+            </div>
+            <div class="product-body">
+              <div class="patient-pane">
+                <div class="mini-label">ПАЦИЕНТ</div>
+                <div class="patient-title">Иванов А. С.</div>
+                <div class="fields">
+                  <div class="field"><span>Жалобы</span><p>температура, кашель 3-й день</p><b>✓</b></div>
+                  <div class="field"><span>Диагноз</span><p>ОРВИ</p><b>✓</b></div>
+                  <div class="field"><span>Рекомендации</span><p>обильное питьё, жаропонижающее при 38.5°C</p><b>✓</b></div>
+                </div>
+              </div>
+              <aside class="vox-panel">
+                <div class="vox-panel-head">
+                  <span class="vox-mark">V</span>
+                  <div><strong>Vox</strong><small>слушает…</small></div>
+                  <span class="live-dot"></span>
+                </div>
+                <div class="wave" aria-hidden="true">
+                  <i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i>
+                </div>
+                <blockquote>«Жалобы: температура, кашель. Диагноз: ОРВИ.»</blockquote>
+                <div class="vox-status"><span>✓</span> записано в карту</div>
+              </aside>
+            </div>
+          </div>
+          <div class="product-caption">
+            <span><i class="caption-dot"></i> Текущий MVP</span>
+            <span>DamuMed / клинический сценарий</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="problem section-light" id="problem">
+      <div class="container">
+        <div class="section-heading split-heading reveal">
+          <div>
+            <div class="eyebrow dark">Проблема</div>
+            <h2>Врач должен смотреть на пациента.<br>Не на форму в компьютере.</h2>
+          </div>
+          <p>Документация необходима. Но она не должна забирать внимание именно в тот момент, когда оно больше всего нужно пациенту.</p>
+        </div>
+
+        <div class="problem-grid">
+          <article class="problem-card reveal">
+            <span class="card-index">01</span>
+            <h3>Приём превращается в работу за компьютером</h3>
+            <p>Жалобы, анамнез, диагноз, рекомендации, протокол — врачу приходится одновременно разговаривать, думать и заполнять систему.</p>
+            <div class="mini-visual keyboard-visual" aria-hidden="true">
+              <div class="patient-orb">Пациент</div><span>↔</span><div class="doctor-orb">Врач</div><span>↔</span><div class="screen-orb">Экран</div>
+            </div>
+          </article>
+
+          <article class="problem-card reveal delay-1">
+            <span class="card-index">02</span>
+            <h3>Руки врача часто физически заняты</h3>
+            <p>В УЗИ, диагностике и стоматологии специалист работает с оборудованием или пациентом и не может одновременно печатать.</p>
+            <div class="hands-visual" aria-hidden="true">
+              <div class="hand-chip">УЗИ</div><div class="hand-chip">МРТ / КТ</div><div class="hand-chip">Стоматология</div>
+            </div>
+          </article>
+
+          <article class="problem-card reveal delay-2">
+            <span class="card-index">03</span>
+            <h3>Для клиники рутина превращается в расходы</h3>
+            <p>Ниже пропускная способность, больше административной нагрузки и меньше качественного времени врача с пациентом.</p>
+            <div class="cost-visual" aria-hidden="true">
+              <div><span>время</span><b>↓</b></div><div><span>рутина</span><b>↑</b></div><div><span>внимание</span><b>↓</b></div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="solution section-dark" id="how">
+      <div class="container">
+        <div class="section-heading centered reveal">
+          <div class="eyebrow">Принцип Vox</div>
+          <h2>Не помогать врачу печатать быстрее.<br><span>Убрать необходимость печатать.</span></h2>
+          <p>Врач продолжает вести обычный приём. Vox берёт на себя часть программной рутины в фоне.</p>
+        </div>
+
+        <div class="flow reveal">
+          <article class="flow-step"><span>01</span><div class="flow-icon">◉</div><h3>Врач говорит</h3><p>Естественная речь во время приёма.</p></article>
+          <div class="flow-arrow" aria-hidden="true">→</div>
+          <article class="flow-step"><span>02</span><div class="flow-icon">⌁</div><h3>Vox понимает</h3><p>Определяет информацию и нужное действие.</p></article>
+          <div class="flow-arrow" aria-hidden="true">→</div>
+          <article class="flow-step"><span>03</span><div class="flow-icon">⌘</div><h3>Vox выполняет</h3><p>Работает с нужными полями медицинской системы.</p></article>
+          <div class="flow-arrow" aria-hidden="true">→</div>
+          <article class="flow-step"><span>04</span><div class="flow-icon">✓</div><h3>Врач проверяет</h3><p>Контроль итоговой записи остаётся у специалиста.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="demo section-light" id="demo">
+      <div class="container">
+        <div class="section-heading centered reveal">
+          <div class="eyebrow dark">Демонстрация</div>
+          <h2>90 секунд вместо десяти абзацев о продукте</h2>
+          <p>Текущий MVP Vox в клиническом сценарии: голос, интерфейс медицинской системы и автоматическое выполнение действий.</p>
+        </div>
+
+        <div class="video-shell reveal">
+          <video controls playsinline preload="metadata" poster="assets/vox-demo-poster.jpg" aria-label="Демонстрация Vox">
+            <source src="assets/vox-demo.mp4" type="video/mp4" />
+            Ваш браузер не поддерживает воспроизведение видео.
+          </video>
+          <div class="video-meta">
+            <div><span class="live-badge">MVP</span><strong>Демонстрация продукта</strong></div>
+            <span>01:33</span>
+          </div>
+        </div>
+
+        <div class="demo-points reveal">
+          <div><span>01</span><p><strong>Слышит команду</strong><br>Распознаёт речь врача.</p></div>
+          <div><span>02</span><p><strong>Определяет действие</strong><br>Понимает, что нужно сделать.</p></div>
+          <div><span>03</span><p><strong>Работает в системе</strong><br>Заполняет нужные данные.</p></div>
+          <div><span>04</span><p><strong>Оставляет контроль врачу</strong><br>Итог можно проверить.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="use-cases section-cream" id="use-cases">
+      <div class="container">
+        <div class="section-heading split-heading reveal">
+          <div>
+            <div class="eyebrow dark">Для кого</div>
+            <h2>Особенно полезен там, где руки врача заняты, а документы — нет.</h2>
+          </div>
+          <p>Vox начинает с направлений, где голосовой интерфейс решает не абстрактную, а физически ощутимую проблему.</p>
+        </div>
+
+        <div class="use-case-list">
+          <article class="use-case reveal">
+            <div class="use-case-number">01</div>
+            <div class="use-case-title"><span class="use-icon">✦</span><h3>Частные клиники</h3></div>
+            <p>Больше внимания пациентам без пропорционального роста административной нагрузки.</p>
+            <span class="use-tag">ЛПР / владельцы клиник</span>
+          </article>
+          <article class="use-case reveal">
+            <div class="use-case-number">02</div>
+            <div class="use-case-title"><span class="use-icon">◫</span><h3>УЗИ / МРТ / КТ</h3></div>
+            <p>Врач работает с оборудованием — протокол может формироваться параллельно.</p>
+            <span class="use-tag">Диагностика</span>
+          </article>
+          <article class="use-case reveal">
+            <div class="use-case-number">03</div>
+            <div class="use-case-title"><span class="use-icon">＋</span><h3>Стоматология</h3></div>
+            <p>Когда обе руки заняты, голос становится естественным способом взаимодействия с системой.</p>
+            <span class="use-tag">Hands-free сценарий</span>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="benefits section-light" id="benefits">
+      <div class="container">
+        <div class="section-heading centered reveal">
+          <div class="eyebrow dark">Преимущества</div>
+          <h2>Меньше действий. Больше внимания там, где оно действительно нужно.</h2>
+        </div>
+
+        <div class="benefit-grid">
+          <article class="benefit-card reveal"><span>◉</span><h3>Работает голосом</h3><p>Не нужно осваивать ещё один тяжёлый интерфейс ради одной задачи.</p></article>
+          <article class="benefit-card reveal delay-1"><span>◌</span><h3>Встраивается в процесс</h3><p>Vox создаётся как помощник поверх существующей медицинской системы.</p></article>
+          <article class="benefit-card reveal delay-2"><span>↘</span><h3>Сокращает ручные действия</h3><p>Меньше переключений, переходов между полями и повторного ввода.</p></article>
+          <article class="benefit-card reveal"><span>⌁</span><h3>Понимает намерение</h3><p>Цель — не только превратить речь в текст, но и понять нужное действие.</p></article>
+          <article class="benefit-card reveal delay-1"><span>✋</span><h3>Освобождает руки</h3><p>Особенно важно для диагностики, процедур и стоматологии.</p></article>
+          <article class="benefit-card reveal delay-2"><span>✓</span><h3>Контроль у врача</h3><p>Vox помогает с рутиной, но не подменяет клиническое решение специалиста.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="comparison section-dark" id="comparison">
+      <div class="container">
+        <div class="section-heading centered reveal">
+          <div class="eyebrow">Отличие</div>
+          <h2>Vox — не диктофон и не ещё одно текстовое поле с ИИ</h2>
+          <p>Главная идея продукта — перейти от «распознать речь» к «выполнить нужное действие в рабочем процессе».</p>
+        </div>
+
+        <div class="comparison-table-wrap reveal">
+          <table class="comparison-table">
+            <thead>
+              <tr><th></th><th>Диктовка</th><th>ИИ-чат</th><th>Секретарь</th><th class="vox-col">Vox</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Распознаёт речь</td><td>✓</td><td>✓</td><td>✓</td><td class="vox-col">✓</td></tr>
+              <tr><td>Понимает команду</td><td>—</td><td>частично</td><td>✓</td><td class="vox-col">✓</td></tr>
+              <tr><td>Работает с медсистемой</td><td>—</td><td>—</td><td>✓</td><td class="vox-col">✓</td></tr>
+              <tr><td>Не требует отдельного сотрудника</td><td>✓</td><td>✓</td><td>—</td><td class="vox-col">✓</td></tr>
+              <tr><td>Hands-free как основной сценарий</td><td>частично</td><td>—</td><td>—</td><td class="vox-col">✓</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <section class="traction section-light" id="traction">
+      <div class="container">
+        <div class="section-heading split-heading reveal">
+          <div>
+            <div class="eyebrow dark">Трекшн</div>
+            <h2>Уже не только концепция.</h2>
+          </div>
+          <p>Vox развивается через работающий MVP, клинический пилот и обратную связь от медицинских специалистов.</p>
+        </div>
+
+        <div class="traction-grid">
+          <article class="traction-card reveal">
+            <div class="traction-kicker">С июня 2026</div>
+            <div class="traction-big">MVP</div>
+            <h3>Рабочий прототип</h3>
+            <p>Голосовое управление и автоматизация ключевого пользовательского сценария.</p>
+          </article>
+          <article class="traction-card featured reveal delay-1">
+            <div class="traction-kicker">Пилот</div>
+            <div class="traction-big">AqbobekRC</div>
+            <h3>Критерии пилота согласованы</h3>
+            <p>Продукт проверяется не только в презентации, а в медицинской среде.</p>
+          </article>
+          <article class="traction-card reveal delay-2">
+            <div class="traction-kicker">CustDev</div>
+            <div class="traction-big">Врачи</div>
+            <h3>Проблема подтверждена интервью</h3>
+            <p>Приоритеты продукта формируются из реальных рабочих сценариев специалистов.</p>
+          </article>
+        </div>
+
+        <blockquote class="doctor-quote reveal">
+          <span class="quote-mark">“</span>
+          <p>Я взяла себе в работники помощника-медсестру, чтобы у меня производительность была лучше. Чтобы всё моё внимание, как врача, было направлено именно на пациента, а не на заполнение шаблонов.</p>
+          <footer>Из CustDev-интервью команды Vox · публикуется без персональных данных</footer>
+        </blockquote>
+      </div>
+    </section>
+
+    <section class="implementation section-cream" id="implementation">
+      <div class="container">
+        <div class="section-heading centered reveal">
+          <div class="eyebrow dark">Как начать</div>
+          <h2>От первого демо до пилота — четыре шага</h2>
+          <p>Не нужно покупать систему вслепую. Сначала проверяем Vox на вашем реальном рабочем процессе.</p>
+        </div>
+
+        <div class="timeline reveal">
+          <article><span>01</span><h3>Короткое знакомство</h3><p>Показываете нам типичный рабочий процесс врача и медицинскую систему.</p><small>≈ 20–30 минут</small></article>
+          <article><span>02</span><h3>Демонстрация</h3><p>Показываем Vox и выбираем сценарии, где автоматизация даст максимальный эффект.</p><small>Без обязательств</small></article>
+          <article><span>03</span><h3>Настройка пилота</h3><p>Выбираем одно рабочее место или небольшую группу и фиксируем критерии успеха.</p><small>Малый старт</small></article>
+          <article><span>04</span><h3>Пилот</h3><p>Собираем обратную связь в реальной работе и принимаем решение о масштабировании.</p><small>Решение по данным</small></article>
+        </div>
+
+        <div class="center-cta reveal"><button class="btn btn-dark btn-large js-open-lead" type="button">Обсудить пилот</button></div>
+      </div>
+    </section>
+
+    <section class="pricing section-light" id="pricing">
+      <div class="container">
+        <div class="section-heading centered reveal">
+          <div class="eyebrow dark">Тарифы</div>
+          <h2>Начните с одного рабочего места</h2>
+          <p>Текущая модель тарифов тестируется вместе с пилотами и может уточняться.</p>
+        </div>
+
+        <div class="pricing-grid">
+          <article class="price-card reveal">
+            <div class="price-label">TRIAL</div>
+            <h3>Бесплатно</h3>
+            <p class="price-sub">Ограниченный объём использования</p>
+            <ul><li>Знакомство с Vox</li><li>Базовый рабочий сценарий</li><li>Без долгосрочных обязательств</li></ul>
+            <button class="btn btn-outline-dark js-open-lead" type="button" data-plan="Trial">Попробовать Vox</button>
+          </article>
+
+          <article class="price-card price-card-main reveal delay-1">
+            <div class="popular-tag">Для частной практики</div>
+            <div class="price-label">PRO</div>
+            <h3>23 900 ₸</h3>
+            <p class="price-sub">за рабочее место / месяц</p>
+            <ul><li>Голосовой рабочий сценарий</li><li>Автоматизация заполнения</li><li>Поддержка подключения</li></ul>
+            <button class="btn btn-primary js-open-lead" type="button" data-plan="Pro">Запросить подключение</button>
+          </article>
+
+          <article class="price-card reveal delay-2">
+            <div class="price-label">ENTERPRISE</div>
+            <h3>Индивидуально</h3>
+            <p class="price-sub">для клиник и сетей от 10+ мест</p>
+            <ul><li>План внедрения</li><li>Настройка для команды</li><li>Индивидуальные условия</li></ul>
+            <button class="btn btn-outline-dark js-open-lead" type="button" data-plan="Enterprise">Обсудить внедрение</button>
+          </article>
+        </div>
+
+        <p class="pricing-note reveal">* Тарифы — текущая рабочая гипотеза продукта и могут изменяться по результатам пилотов.</p>
+      </div>
+    </section>
+
+    <section class="security section-dark" id="security">
+      <div class="container security-grid">
+        <div class="security-copy reveal">
+          <div class="eyebrow">Доверие и безопасность</div>
+          <h2>Медицинские данные требуют понятной архитектуры, а не громких обещаний.</h2>
+          <p>Перед пилотом команда отдельно согласовывает с клиникой технический сценарий, доступы и требования к обработке данных.</p>
+          <button class="text-link js-open-tech" type="button">Запросить техническое описание <span>→</span></button>
+        </div>
+
+        <div class="security-list reveal delay-1">
+          <article><span>01</span><div><h3>Контроль доступа</h3><p>Подключение строится вокруг минимально необходимых разрешений для выбранного сценария.</p></div></article>
+          <article><span>02</span><div><h3>Минимизация данных</h3><p>Архитектура пилота должна обрабатывать только информацию, необходимую для конкретной функции.</p></div></article>
+          <article><span>03</span><div><h3>Контроль врача</h3><p>Vox — помощник в документации, а не система самостоятельного медицинского решения.</p></div></article>
+          <article><span>04</span><div><h3>Согласование до запуска</h3><p>Техническая схема и требования клиники обсуждаются до начала пилотного использования.</p></div></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="faq section-light" id="faq">
+      <div class="container faq-grid">
+        <div class="faq-title reveal">
+          <div class="eyebrow dark">FAQ</div>
+          <h2>Частые вопросы</h2>
+          <p>Если вашего вопроса здесь нет — покажите нам ваш рабочий сценарий на коротком созвоне.</p>
+          <button class="btn btn-dark js-open-lead" type="button">Задать вопрос</button>
+        </div>
+
+        <div class="faq-list reveal delay-1">
+          <details open>
+            <summary>Vox заменяет врача?<span>+</span></summary>
+            <p>Нет. Vox автоматизирует часть рутинных действий с медицинской документацией. Клиническое решение и контроль итоговой записи остаются за специалистом.</p>
+          </details>
+          <details>
+            <summary>Нужно ли врачу учиться новой медицинской системе?<span>+</span></summary>
+            <p>Цель Vox — работать поверх привычного процесса. Врач взаимодействует с ассистентом голосом, а не переносит работу в отдельную сложную систему.</p>
+          </details>
+          <details>
+            <summary>Это просто распознавание речи?<span>+</span></summary>
+            <p>Нет. Распознавание речи — только один этап. Vox стремится интерпретировать команду и выполнить соответствующее действие в интерфейсе медицинской системы.</p>
+          </details>
+          <details>
+            <summary>С какими системами работает Vox?<span>+</span></summary>
+            <p>Текущий MVP прежде всего разрабатывается и тестируется в сценариях DamuMed. Возможность работы с другими системами оценивается отдельно.</p>
+          </details>
+          <details>
+            <summary>Что если Vox неправильно понял врача?<span>+</span></summary>
+            <p>Итоговая запись должна оставаться проверяемой врачом. В пилоте отдельно тестируются ситуации, где распознавание или действие требует проверки или подтверждения.</p>
+          </details>
+          <details>
+            <summary>Можно начать с одного врача?<span>+</span></summary>
+            <p>Да. Для первых внедрений это предпочтительный сценарий: один кабинет или небольшая группа, затем решение о масштабировании.</p>
+          </details>
+          <details>
+            <summary>Сколько занимает подключение?<span>+</span></summary>
+            <p>Срок зависит от медицинской системы и выбранного сценария. После короткой технической встречи команда сможет предложить конкретный план пилота.</p>
+          </details>
+          <details>
+            <summary>Как обрабатываются данные пациентов?<span>+</span></summary>
+            <p>Для каждого пилота техническая архитектура, доступы и требования к обработке данных должны быть согласованы с клиникой до запуска.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <section class="final-cta section-cream" id="contact">
+      <div class="container final-card reveal">
+        <div class="final-card-glow"></div>
+        <div class="final-copy">
+          <div class="eyebrow">Пилот Vox</div>
+          <h2>Покажите один типичный приём.<br>Мы покажем, где можно убрать рутину.</h2>
+          <p>Оставьте контакты — обсудим вашу медицинскую систему, рабочий сценарий и формат пилота.</p>
+          <div class="contact-mini"><span>Instagram: @hearthevox</span><span>WhatsApp: +7 705 345 67 89</span></div>
+        </div>
+
+        <form class="lead-form" id="lead-form">
+          <label>Имя<input name="name" type="text" placeholder="Как к вам обращаться?" required /></label>
+          <label>Клиника / специальность<input name="clinic" type="text" placeholder="Например: стоматология, УЗИ" required /></label>
+          <label>Телефон / WhatsApp<input name="phone" type="tel" placeholder="+7 ___ ___ __ __" required /></label>
+          <label>Что хотите автоматизировать?<textarea name="goal" rows="3" placeholder="Необязательно"></textarea></label>
+          <label class="checkbox"><input name="consent" type="checkbox" required /><span>Я согласен отправить эти данные команде Vox через WhatsApp.</span></label>
+          <button class="btn btn-primary btn-large" type="submit">Запросить пилот <span>↗</span></button>
+          <small>Сайт не сохраняет данные формы: после отправки откроется подготовленное сообщение в WhatsApp.</small>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <a class="brand" href="#top"><img src="assets/vox-logo.png" alt="" width="58" height="38" /><span class="brand-copy"><strong>VOX</strong><small>by SUERTE</small></span></a>
+        <p>Голосовой ИИ-ассистент для врачей.</p>
+      </div>
+      <div><h4>Продукт</h4><a href="#how">Как работает</a><a href="#demo">Демо</a><a href="#use-cases">Для клиник</a><a href="#pricing">Тарифы</a></div>
+      <div><h4>Доверие</h4><a href="#security">Безопасность</a><a href="#faq">FAQ</a><button class="footer-link js-open-tech" type="button">Техническое описание</button></div>
+      <div><h4>Контакты</h4><a href="https://instagram.com/hearthevox" target="_blank" rel="noreferrer">@hearthevox</a><a href="https://wa.me/77053456789" target="_blank" rel="noreferrer">+7 705 345 67 89</a><span>Казахстан</span></div>
+    </div>
+    <div class="container footer-bottom"><span>© 2026 Suerte · Vox</span><span>Vox не заменяет врача и не принимает самостоятельных клинических решений.</span></div>
+  </footer>
+
+  <dialog class="modal" id="lead-modal" aria-labelledby="lead-modal-title">
+    <button class="modal-close js-close-modal" type="button" aria-label="Закрыть">×</button>
+    <div class="modal-kicker">Пилот Vox</div>
+    <h2 id="lead-modal-title">Расскажите, где у врача уходит время</h2>
+    <p>После отправки откроется WhatsApp с готовым сообщением для команды Vox.</p>
+    <form class="lead-form compact" id="modal-lead-form">
+      <input type="hidden" name="plan" value="Пилот" />
+      <label>Имя<input name="name" type="text" placeholder="Как к вам обращаться?" required /></label>
+      <label>Клиника / специальность<input name="clinic" type="text" placeholder="Например: УЗИ, стоматология" required /></label>
+      <label>Телефон / WhatsApp<input name="phone" type="tel" placeholder="+7 ___ ___ __ __" required /></label>
+      <label class="checkbox"><input name="consent" type="checkbox" required /><span>Согласен отправить данные команде Vox через WhatsApp.</span></label>
+      <button class="btn btn-primary btn-large" type="submit">Продолжить в WhatsApp <span>↗</span></button>
+    </form>
+  </dialog>
+
+  <dialog class="modal" id="tech-modal" aria-labelledby="tech-modal-title">
+    <button class="modal-close js-close-tech" type="button" aria-label="Закрыть">×</button>
+    <div class="modal-kicker">Техническое описание</div>
+    <h2 id="tech-modal-title">Запросить материалы для технической команды</h2>
+    <p>Мы не публикуем неподтверждённые обещания о безопасности. Для пилота техническая схема согласовывается отдельно с клиникой.</p>
+    <a class="btn btn-primary btn-large" href="https://wa.me/77053456789?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5%21%20%D0%A5%D0%BE%D1%87%D1%83%20%D0%BF%D0%BE%D0%BB%D1%83%D1%87%D0%B8%D1%82%D1%8C%20%D1%82%D0%B5%D1%85%D0%BD%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%BE%D0%B5%20%D0%BE%D0%BF%D0%B8%D1%81%D0%B0%D0%BD%D0%B8%D0%B5%20Vox." target="_blank" rel="noreferrer">Запросить в WhatsApp ↗</a>
+  </dialog>
+
+  <script src="script.js"></script>
+</body>
+</html>
